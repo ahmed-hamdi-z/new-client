@@ -1,16 +1,12 @@
-import SwipeCarousel from "@/components/carousel";
-
+import { Link } from "react-router-dom";
 const CARD_WIDTH = 350;
 const MARGIN = 20;
 
 const Blog = () => {
   return (
     <>
-      <div className="h-96 ">
-        <SwipeCarousel />
-      </div>
 
-      <div className="flex flex-col items-center mt-4 ">
+      <div className="flex flex-col items-center mt-36 ">
         <h1 className=" relative text-5xl mb-20 text-black">Blog </h1>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mx-auto mb-10">
           {posts.map((post) => {
@@ -22,53 +18,55 @@ const Blog = () => {
   );
 };
 
-const Post = ({ imgUrl, title, description }: PostType) => {
+export const Post = ({ id, imgUrl, title, description }: PostType) => {
   return (
-    <div
-      className="relative shrink-0 cursor-pointer transition-transform hover:-translate-y-1"
-      style={{
-        width: CARD_WIDTH,
-        marginRight: MARGIN,
-      }}
-    >
-      <img
-        src={imgUrl}
-        className="mb- h-[200px] w-full rounded-lg object-cover"
-        alt={`An image for a fake blog post titled ${title}`}
-      />
-
-      <p className="mt-2 text-lg font-medium">{title}</p>
-      <p className="text-sm mt-2 text-neutral-500">{description}</p>
-    </div>
+    <>
+      <Link
+        to={`/details/${id}`}
+        key={id}
+        className="relative shrink-0 cursor-pointer transition-transform hover:-translate-y-1"
+        style={{
+          width: CARD_WIDTH,
+          marginRight: MARGIN,
+        }}
+      >
+        <img
+          src={imgUrl}
+          className="mb- h-[200px] w-full rounded-lg object-cover"
+          alt={`An image for a fake blog post titled ${title}`}
+        />
+        <p className="mt-2 text-lg font-medium">{title}</p>
+        <p className="text-sm mt-2 text-neutral-500">{description}</p>
+      </Link>
+    </>
   );
 };
 
 export default Blog;
 
-type PostType = {
+export type PostType = {
   id: number;
   imgUrl: string;
-
   title: string;
   description: string;
 };
 
-const posts: PostType[] = [
+ export const posts: PostType[] = [
   {
     id: 1,
     imgUrl: "/images/nn.jpg",
 
-    title: "Lorem ipsum dolor sit amet ",
+    title: "hi ",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",
+      "hi",
   },
   {
     id: 2,
     imgUrl: "/images/nn.jpg",
 
-    title: "Lorem ipsum dolor sit amet ",
+    title: "hello ",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",
+      "hello",
   },
   {
     id: 3,

@@ -2,12 +2,16 @@
 import { FC, useEffect, useRef } from "react";
 import { animate, useInView } from "framer-motion";
 
+import { useTranslation } from "react-i18next";
+
+
 const CountUpStats: FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col items-center justify-between pt-20 ">
       <div className="">
         <button className=" mb-16  w-60 h-12 border-2 border-black  font-semibold text-black transition-colors hover:bg-slate-700 hover:text-black">
-          <span>Get Consultation </span>
+          <p>{t("Welcome to React")} </p>
         </button>
       </div>
 

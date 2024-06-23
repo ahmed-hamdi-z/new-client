@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import { CONFIG } from "@/utils/config";
 import MainNavbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Details from "@/pages/blog-details";
 
 
 //Pages Routes
@@ -21,11 +22,10 @@ const Layout: FC = () => {
     <>
     <div> <MainNavbar /> </div>
     <Routes>
-   
       <Route path={CONFIG.root_path} element={<LayoutStructure />} />
       <Route path={CONFIG.contact_path} element={<Contact />} />
       <Route path={CONFIG.blog_path} element={<Blog />} />
-
+      <Route path={CONFIG.blog_details} element={<Details />} />
     </Routes>
     <div> <Footer /> </div>
 

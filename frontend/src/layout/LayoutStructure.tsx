@@ -11,7 +11,6 @@ import { Outlet } from "react-router-dom";
 // React Bootstrap
 import { Col, Row } from "react-bootstrap";
 
-
 // Components
 
 const SwipeCarousel = lazy(() => import("@/components/carousel"));
@@ -20,22 +19,22 @@ const Services = lazy(() => import("@/components/services"));
 const Gallary = lazy(() => import("@/components/gallary"));
 const Clients = lazy(() => import("@/components/clients"));
 const Work = lazy(() => import("@/components/work"));
-const Partners = lazy(() => import("@/components/partners"));
 const Blog = lazy(() => import("@/components/blog"));
 const FollowUS = lazy(() => import("@/components/follow"));
 
+const ContactComp = lazy(() => import("@/components/contact"));
 
 
 // Pages
-const Contact = lazy(() => import("@/pages/contact"));
+
 
 const LayoutStructure: FC = () => {
   const { direction, language } = useSelector(
     (state: RootState) => state.settings
   );
-
+  
   return (
-    <main className={`main-layout direction-${direction} lang-${language}`}>
+    <main className={`main-layout direction-${direction} lang-${language}`} >
       <Row className="main-content">
       
         <Col xs="12">
@@ -57,20 +56,16 @@ const LayoutStructure: FC = () => {
           <Work />
         </Col>
         <Col xs="12">
-          <Partners />
-        </Col>
-        <Col xs="12">
           <Blog />
         </Col>
         <Col xs="12">
           <FollowUS />
         </Col>
         <Col xs="12">
-          <Contact />
+          <ContactComp />
         </Col>
         <Col xs="12">
           <Outlet />
-      
         </Col>
       </Row>
     </main>

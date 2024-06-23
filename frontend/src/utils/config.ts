@@ -3,8 +3,7 @@ export const CONFIG = {
   shortcut_name: "new",
   request_url: "http://127.0.0.1:8000/api/",
   root_path: "/",
- contact_path: "/contact",
-  blog_path: "/blog"
-
+  contact_path: "/contact",
+  blog_path: "/blog",
+  blog_details: "/details/:id"
 } as const;
-

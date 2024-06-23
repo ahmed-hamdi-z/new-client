@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FiArrowUpRight, FiStar } from "react-icons/fi";
 
-export const ContactComp = () => {
+ const ContactComp = () => {
   return (
     <section className="grid min-h-screen grid-cols-1 bg-slate-50 md:grid-cols-[1fr,_400px] lg:grid-cols-[1fr,_600px] mt-16">
       <Form />
@@ -9,7 +9,7 @@ export const ContactComp = () => {
     </section>
   );
 };
-
+export default ContactComp;
 const Form = () => {
   return (
     <motion.div

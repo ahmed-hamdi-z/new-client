@@ -1,14 +1,14 @@
 // Dependencies
-import  { FC, useState } from "react";
+import { FC, useState } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const images = [
   "/images/2.jpg",
+  "/images/nn.jpg",
   "/images/2.jpg",
+  "/images/nn.jpg",
   "/images/2.jpg",
-  "/images/2.jpg",
-  "/images/2.jpg",
-  "/images/2.jpg",
+  "/images/nn.jpg",
   "/images/2.jpg",
   "/images/2.jpg",
   "/images/2.jpg",
@@ -21,6 +21,7 @@ const Gallery: FC = () => {
   const [data, setData] = useState({ img: "", i: 0 });
 
   const viewImage = (img: string, i: number) => {
+    console.log("Image clicked:", img, i); // Log the image and index
     setData({ img, i });
   };
 
@@ -38,11 +39,11 @@ const Gallery: FC = () => {
   return (
     <>
       {data.img && (
-        <div className="w-[100%] h-[100vh] bg-black fixed flex justify-center items-center overflow-hidden">
-          <button onClick={() => imgAction('close')} className="absolute top-10 right-10 text-white">X</button>
-          <button onClick={() => imgAction('prev-img')} className="absolute left-10 text-white">Prev</button>
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50">
+          <button onClick={() => imgAction('close')} className="absolute top-10 right-10 text-white text-3xl">X</button>
+          <button onClick={() => imgAction('prev-img')} className="absolute left-10 text-white text-3xl">Prev</button>
           <img src={data.img} className="w-auto max-w-[90%] max-h-[90%]" />
-          <button onClick={() => imgAction('next-img')} className="absolute right-10 text-white">Next</button>
+          <button onClick={() => imgAction('next-img')} className="absolute right-10 text-white text-3xl">Next</button>
         </div>
       )}
       <div className="p-3">
@@ -56,7 +57,7 @@ const Gallery: FC = () => {
                 key={i}
                 src={image}
                 className="w-auto block cursor-pointer"
-                alt="Gallery item"
+                alt={`Gallery item ${i}`}
                 onClick={() => viewImage(image, i)}
               />
             ))}

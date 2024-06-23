@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import useMeasure from "react-use-measure";
 
 const CARD_WIDTH = 350;
@@ -85,9 +86,12 @@ const Blog = () => {
   );
 };
 
-const Post = ({ imgUrl, title, description }: PostType) => {
+const Post = ({id, imgUrl, title, description }: PostType) => {
   return (
-    <div
+    <> 
+    <Link
+       to={`/details/${id}`}
+       key={id}
       className="relative shrink-0 cursor-pointer transition-transform hover:-translate-y-1"
       style={{
         width: CARD_WIDTH,
@@ -102,7 +106,9 @@ const Post = ({ imgUrl, title, description }: PostType) => {
 
       <p className="mt-2 text-lg font-medium">{title}</p>
       <p className="text-sm mt-2 text-neutral-500">{description}</p>
-    </div>
+    </Link>
+    </>
+   
   );
 };
 
