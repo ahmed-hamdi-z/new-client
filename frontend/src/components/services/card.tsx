@@ -8,12 +8,12 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, items, icon }) => {
   return (
-    <div className="bg-gray-900  text-white p-6 w-96 h-96 shadow-lg">
-      <div className="flex items-center mb-4">
+    <div className="bg-gray-900 text-white w-auto h-auto p-6 rounded-md ">
+      <div className="flex items-center  mb-4">
         <div className="text-2xl mr-2">{icon}</div>
         <h2 className="text-xl font-bold">{title}</h2>
       </div>
-      <ul className="list-disc list-inside">
+      <ul className="list-outside list-disc pl-3 ">
         {items.map((item, index) => (
           <li key={index} className="text-gray-400">{item}</li>
         ))}
@@ -49,7 +49,7 @@ const AppCards: React.FC = () => {
       ],
     },
     {
-      title: 'Restoration and development services for residential units',
+      title: 'Restoration ',
       icon: '🏠', // Replace with an appropriate icon
       items: [
         'Restoration and development of residential villas',
@@ -59,7 +59,7 @@ const AppCards: React.FC = () => {
       ],
     },
     {
-      title: 'Ebtkrat Lab',
+      title: 'zahw Lab',
       icon: '🧪', // Replace with an appropriate icon
       items: [
         'Virtual reality and augmented reality services',

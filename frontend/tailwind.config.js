@@ -11,7 +11,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-          'ss': "url('./public/images/nn.jpg')",
+          'parallex': "url('./public/images/parallex.jpg')",
       },
       colors,
     },

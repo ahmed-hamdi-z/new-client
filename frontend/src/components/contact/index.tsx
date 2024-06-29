@@ -1,7 +1,9 @@
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { FiArrowUpRight, FiStar } from "react-icons/fi";
+import emailjs from "@emailjs/browser";
 
- const ContactComp = () => {
+const ContactComp = () => {
   return (
     <section className="grid min-h-screen grid-cols-1 bg-slate-50 md:grid-cols-[1fr,_400px] lg:grid-cols-[1fr,_600px] mt-16">
       <Form />
@@ -10,7 +12,31 @@ import { FiArrowUpRight, FiStar } from "react-icons/fi";
   );
 };
 export default ContactComp;
-const Form = () => {
+
+const Form: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "service_tc9dusc",
+          "template_4qrvjnp",
+          form.current,
+          "OT9OR1z7XDM1I2qYe"
+        )
+        .then(
+          () => {
+            console.log("SUCCESS!");
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
+    }
+  };
   return (
     <motion.div
       initial="initial"
@@ -29,16 +55,14 @@ const Form = () => {
           Want to work with us?
         </motion.h1>
 
-        <form onSubmit={(e) => e.preventDefault()} className="w-full">
+        <form onSubmit={sendEmail} className="w-full">
           <motion.div variants={primaryVariants} className="mb-2 w-full">
-            <label
-              htmlFor="password-input"
-              className="mb-1 inline-block text-sm font-medium"
-            >
+            <label className="mb-1 inline-block text-sm font-medium">
               Name<span className="text-red-600">*</span>
             </label>
             <input
               id="name-input"
+              name="user_name"
               type="text"
               placeholder="Enter your Name"
               className="w-full rounded border-[1px] border-slate-300 px-2.5 py-1.5 focus:outline-indigo-600"
@@ -47,14 +71,12 @@ const Form = () => {
           </motion.div>
 
           <motion.div variants={primaryVariants} className="mb-2 w-full">
-            <label
-              htmlFor="email-input"
-              className="mb-1 inline-block text-sm font-medium"
-            >
+            <label className="mb-1 inline-block text-sm font-medium">
               Email<span className="text-red-600">*</span>
             </label>
             <input
               id="email-input"
+              name="user_email"
               type="email"
               placeholder="Enter your email"
               className="w-full rounded border-[1px] border-slate-300 px-2.5 py-1.5 focus:outline-indigo-600"
@@ -63,10 +85,7 @@ const Form = () => {
           </motion.div>
 
           <motion.div variants={primaryVariants} className="mb-4 w-full">
-            <label
-              htmlFor="Mobile-number-input"
-              className="mb-1 inline-block text-sm font-medium"
-            >
+            <label className="mb-1 inline-block text-sm font-medium">
               Mobile Number<span className="text-red-600">*</span>
             </label>
             <input
@@ -77,14 +96,12 @@ const Form = () => {
               required
             />
 
-            <label
-              htmlFor="message-input "
-              className="mb-1 inline-block text-sm font-medium mt-2"
-            >
-               Message<span className="text-red-600">*</span>
+            <label className="mb-1 inline-block text-sm font-medium mt-2">
+              Message<span className="text-red-600">*</span>
             </label>
             <input
               id="message"
+              name="message"
               type="text"
               placeholder="Enter Your Message"
               className="w-full rounded border-[1px] border-slate-300 px-2.5 py-1.5 focus:outline-indigo-600 h-40 placeholder:text-ellipsis"
@@ -102,22 +119,17 @@ const Form = () => {
               className="h-4 w-4 accent-indigo-600"
               required
             />
-            <label htmlFor="terms-checkbox" className="text-xs">
-           I agree to the terms and conditions, privacy
-              policy, and cookie policy
+            <label className="text-xs">
+              I agree to the terms and conditions, privacy policy, and cookie
+              policy
             </label>
           </motion.div>
 
-          <motion.button
-            variants={primaryVariants}
-            whileTap={{
-              scale: 0.985,
-            }}
+          <input
+            value="Send"
             type="submit"
             className="mb-1.5 w-full rounded bg-indigo-600 px-4 py-2 text-center font-medium text-white transition-colors hover:bg-indigo-700"
-          >
-            Send
-          </motion.button>
+          />
         </form>
       </div>
     </motion.div>
@@ -129,7 +141,7 @@ const SupplementalContent = () => {
     <div className="group sticky top-4 m-4 h-80 overflow-hidden rounded-3xl rounded-tl-[4rem] bg-slate-950 md:h-[calc(100vh_-_2rem)]">
       <img
         alt="An example image"
-        src="/images/nn.jpg"
+        src="/images/18.webp"
         className="h-full w-full bg-white object-cover transition-all duration-500 group-hover:scale-105 group-hover:opacity-50"
       />
 
@@ -167,31 +179,31 @@ const SupplementalContent = () => {
               variants={avatarVariants}
               className="h-8 w-8 rounded-full border-[1px] border-slate-100 object-cover shadow-inner"
               alt="A placeholder testimonial image"
-              src="/imgs/head-shots/1.jpg"
+              src="/images/24.webp"
             />
             <motion.img
               variants={avatarVariants}
               className="-ml-4 h-8 w-8 rounded-full border-[1px] border-slate-100 object-cover shadow-inner"
               alt="A placeholder testimonial image"
-              src="/imgs/head-shots/2.jpg"
+              src="/images/31.webp"
             />
             <motion.img
               variants={avatarVariants}
               className="-ml-4 h-8 w-8 rounded-full border-[1px] border-slate-100 object-cover shadow-inner"
               alt="A placeholder testimonial image"
-              src="/imgs/head-shots/3.jpg"
+              src="/images/35.webp"
             />
             <motion.img
               variants={avatarVariants}
               className="-ml-4 h-8 w-8 rounded-full border-[1px] border-slate-100 object-cover shadow-inner"
               alt="A placeholder testimonial image"
-              src="/imgs/head-shots/4.jpg"
+              src="/images/17.webp"
             />
             <motion.img
               variants={avatarVariants}
               className="-ml-4 h-8 w-8 rounded-full border-[1px] border-slate-100 object-cover shadow-inner"
               alt="A placeholder testimonial image"
-              src="/imgs/head-shots/6.jpg"
+              src="/images/40.webp"
             />
           </div>
           <div>

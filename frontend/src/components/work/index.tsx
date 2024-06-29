@@ -6,19 +6,17 @@ const Work:FC = ()=>{
     return (
         <section className="flex flex-col items-center justify-center gap-12 bg-neutral-950 px-4 py-24 md:flex-row">
           <Copy />
-        
         </section>
       );
 }
 const Copy = () => (
     <div className="max-w-lg text-center md:text-start flex flex-col items-center justify-center">
-      <h2 className="mb-3 text-4xl text-white">Work with the best</h2>
+      <h2 className="mb-3 text-4xl text-white">Want to work with us?</h2>
       <p className="mb-6 text-sm leading-relaxed text-neutral-400">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, ullam
-        tenetur quam debitis illo nemo aliquid animi ad provident?
+      We offer you all the options that suit your needs, ready to serve you
       </p>
       <div><CTAs /></div>
-     
+
     </div>
   );
   

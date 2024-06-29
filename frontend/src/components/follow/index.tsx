@@ -2,14 +2,14 @@
 import  { FC } from "react";
 
 const images = [
-  "/images/2.jpg",
-  "/images/2.jpg",
-  "/images/2.jpg",
-  "/images/2.jpg",
-  "/images/2.jpg",
-  "/images/2.jpg",
-  "/images/2.jpg",
-  "/images/2.jpg",
+  "/images/40.webp",
+  "/images/41.webp",
+  "/images/42.webp",
+  "/images/13.webp",
+  "/images/28.webp",
+  "/images/48.webp",
+  "/images/30.webp",
+  "/images/26.webp",
 
 ];
 

@@ -51,51 +51,59 @@ export type PostType = {
   description: string;
 };
 
- export const posts: PostType[] = [
+export const posts: PostType[] = [
   {
     id: 1,
-    imgUrl: "/images/nn.jpg",
-
-    title: "hi ",
+    imgUrl: "/images/5.webp",
+   
+    title: "Lorem ipsum dolor sit amet ",
     description:
-      "hi",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",
   },
   {
     id: 2,
-    imgUrl: "/images/nn.jpg",
-
-    title: "hello ",
+    imgUrl: "/images/9.webp",
+   
+    title: "Lorem ipsum dolor sit amet ",
     description:
-      "hello",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",
   },
   {
     id: 3,
-    imgUrl: "/images/nn.jpg",
-
+    imgUrl: "/images/15.webp",
+   
     title: "Lorem ipsum dolor sit amet ",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",
   },
   {
     id: 4,
-    imgUrl: "/images/nn.jpg",
-
+    imgUrl: "/images/16.webp",
+   
     title: "Lorem ipsum dolor sit amet ",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",
   },
   {
     id: 5,
-    imgUrl: "/images/nn.jpg",
-
+    imgUrl: "/images/22.webp",
+   
     title: "Lorem ipsum dolor sit amet ",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",
   },
   {
     id: 6,
-    imgUrl: "/images/nn.jpg",
-
+    imgUrl: "/images/45.webp",
+   
+    title: "Lorem ipsum dolor sit amet ",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",
+  },
+  {
+    id: 7,
+    imgUrl: "/images/47.webp",
+   
     title: "Lorem ipsum dolor sit amet ",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",

@@ -2,8 +2,10 @@ import  { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 
 const imgs = [
-  "/images/nn.jpg",
-  "/images/2.jpg",
+  "/images/hero-bg-1.jpg",
+  "/images/hero-bg-2.jpg",
+  "/images/hero-bg-3.jpg",
+  "/images/hero-bg-4.jpg",
 ];
 
 const ONE_SECOND = 1000;

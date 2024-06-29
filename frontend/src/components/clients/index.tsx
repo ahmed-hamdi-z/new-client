@@ -1,19 +1,6 @@
 // Dependencies
 import { FC } from "react";
 import { motion } from "framer-motion";
-import {
-  SiBurton,
-  SiBmw,
-  SiHeroku,
-  SiBuildkite,
-  SiCouchbase,
-  SiDailymotion,
-  SiDeliveroo,
-  SiEpicgames,
-  SiGenius,
-  SiGodaddy,
-} from "react-icons/si";
-import { IconType } from "react-icons";
 
 const Clients: FC = () => {
   return (
@@ -56,7 +43,7 @@ const TranslateWrapper = ({
   );
 };
 
-const LogoItem = ({ Icon }: { Icon: IconType }) => {
+const LogoItem = ({ imgSrc }: { imgSrc: string }) => {
   return (
     <a
       href="/"
@@ -64,7 +51,7 @@ const LogoItem = ({ Icon }: { Icon: IconType }) => {
       target="_blank"
       className="w-16 md:w-24 h-16 md:h-24 flex justify-center items-center hover:bg-slate-200 text-black transition-colors"
     >
-      <Icon className="text-4xl md:text-5xl" />
+      <img src={imgSrc} />
     </a>
   );
 };
@@ -73,16 +60,19 @@ const LogoItem = ({ Icon }: { Icon: IconType }) => {
 
 const LogoItemsBottom = () => (
   <>
-    <LogoItem Icon={SiBmw} />
-    <LogoItem Icon={SiBurton} />
-    <LogoItem Icon={SiBuildkite} />
-    <LogoItem Icon={SiCouchbase} />
-    <LogoItem Icon={SiDailymotion} />
-    <LogoItem Icon={SiDeliveroo} />
-    <LogoItem Icon={SiEpicgames} />
-    <LogoItem Icon={SiGenius} />
-    <LogoItem Icon={SiGodaddy} />
-    <LogoItem Icon={SiHeroku} />
+    <LogoItem imgSrc="./images/1.png" />
+    <LogoItem imgSrc="./images/2.png" />
+    <LogoItem imgSrc="./images/3.png" />
+    <LogoItem imgSrc="./images/4.png" />
+    <LogoItem imgSrc="./images/5.png" />
+    <LogoItem imgSrc="./images/6.png" />
+    <LogoItem imgSrc="./images/7.png" />
+    <LogoItem imgSrc="./images/8.png" />
+    <LogoItem imgSrc="./images/9.png" />
+    <LogoItem imgSrc="./images/10.png" />
+    <LogoItem imgSrc="./images/11.png" />
+    <LogoItem imgSrc="./images/12.png" /> 
+    
   </>
 );
 

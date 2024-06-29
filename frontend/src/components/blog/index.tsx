@@ -120,12 +120,12 @@ type PostType = {
  
   title: string;
   description: string;
-};
+}; 
 
 const posts: PostType[] = [
   {
     id: 1,
-    imgUrl: "/images/nn.jpg",
+    imgUrl: "/images/5.webp",
    
     title: "Lorem ipsum dolor sit amet ",
     description:
@@ -133,7 +133,7 @@ const posts: PostType[] = [
   },
   {
     id: 2,
-    imgUrl: "/images/nn.jpg",
+    imgUrl: "/images/9.webp",
    
     title: "Lorem ipsum dolor sit amet ",
     description:
@@ -141,7 +141,7 @@ const posts: PostType[] = [
   },
   {
     id: 3,
-    imgUrl: "/images/nn.jpg",
+    imgUrl: "/images/15.webp",
    
     title: "Lorem ipsum dolor sit amet ",
     description:
@@ -149,7 +149,7 @@ const posts: PostType[] = [
   },
   {
     id: 4,
-    imgUrl: "/images/nn.jpg",
+    imgUrl: "/images/16.webp",
    
     title: "Lorem ipsum dolor sit amet ",
     description:
@@ -157,7 +157,7 @@ const posts: PostType[] = [
   },
   {
     id: 5,
-    imgUrl: "/images/nn.jpg",
+    imgUrl: "/images/22.webp",
    
     title: "Lorem ipsum dolor sit amet ",
     description:
@@ -165,7 +165,7 @@ const posts: PostType[] = [
   },
   {
     id: 6,
-    imgUrl: "/images/nn.jpg",
+    imgUrl: "/images/45.webp",
    
     title: "Lorem ipsum dolor sit amet ",
     description:
@@ -173,7 +173,7 @@ const posts: PostType[] = [
   },
   {
     id: 7,
-    imgUrl: "/images/nn.jpg",
+    imgUrl: "/images/47.webp",
    
     title: "Lorem ipsum dolor sit amet ",
     description:

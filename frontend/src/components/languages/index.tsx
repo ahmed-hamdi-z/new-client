@@ -1,26 +1,28 @@
-
 import i18n from "i18next";
-import {  initReactI18next } from "react-i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+import HttpApi from "i18next-http-backend";
 
 i18n
-  .use(initReactI18next) 
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .use(HttpApi)
   .init({
-    
-    resources: {
-      en: {
-        translation: {
-          "Welcome to React": "Welcome "
-        },
-      },
-      ar: {
-        translation: {
-          "Welcome to React": "مرحبا "
-        },
-      },
-    },
-    lng: "en", 
+    lng: "en",
     fallbackLng: "en",
-
+    detection: {
+      order: [
+        "cookie",
+        "htmlTag",
+        "localStorage",
+        "sessionStorage",
+        "navigator",
+        "path",
+        "subdomain",
+      ],
+      caches: ["cookie"],
+    },
+    backend: {
+      loadPath: "/locale/{{lng}}/translation.json",
+    },
   });
-
-

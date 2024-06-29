@@ -11,8 +11,10 @@ import { Outlet } from "react-router-dom";
 // React Bootstrap
 import { Col, Row } from "react-bootstrap";
 
-// Components
+import WhatsAppIcon from "@/components/whatsapp-icon";
 
+
+// Components
 const SwipeCarousel = lazy(() => import("@/components/carousel"));
 const CountUpStats = lazy(() => import("@/components/stats"));
 const Services = lazy(() => import("@/components/services"));
@@ -24,26 +26,26 @@ const FollowUS = lazy(() => import("@/components/follow"));
 
 const ContactComp = lazy(() => import("@/components/contact"));
 
-
 // Pages
-
 
 const LayoutStructure: FC = () => {
   const { direction, language } = useSelector(
     (state: RootState) => state.settings
   );
-  
+
   return (
-    <main className={`main-layout direction-${direction} lang-${language}`} >
+    <main className={`main-layout direction-${direction} lang-${language}`}>
       <Row className="main-content">
-      
+      <Col className="fixed bottom-10 left-10" xs="12">
+          <WhatsAppIcon />
+        </Col>
         <Col xs="12">
           <SwipeCarousel />
         </Col>
         <Col xs="12">
           <CountUpStats />
         </Col>
-        <Col xs="12">
+        <Col className=" " xs="12">
           <Services />
         </Col>
         <Col xs="12">
