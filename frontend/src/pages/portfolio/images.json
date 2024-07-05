@@ -1,0 +1,24 @@
+{
+    "all": [
+      "/images/1.webp",
+      "/images/1.webp",
+      "/images/1.webp",
+      "/images/1.webp",
+      "/images/1.webp"
+    ],
+    "residential": [
+      "/images/1.webp",
+      "/images/2.webp",
+      "/images/3.webp",
+      "/images/4.webp",
+      "/images/5.webp"
+    ],
+    "commercial": [
+      "/images/6.webp",
+      "/images/7.webp",
+      "/images/8.webp",
+      "/images/8.webp",
+      "/images/10.webp"
+    ]
+  }
+  

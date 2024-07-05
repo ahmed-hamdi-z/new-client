@@ -15,7 +15,7 @@ export default ContactComp;
 
 const Form: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
-
+ 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -50,7 +50,7 @@ const Form: React.FC = () => {
       <div className="mx-auto my-auto max-w-lg px-4 md:pr-0">
         <motion.h1
           variants={primaryVariants}
-          className="mb-3 text-center text-4xl font-semibold"
+          className="mb-3 text-center text-4xl font-semibold text-[#764095]"
         >
           Want to work with us?
         </motion.h1>
@@ -65,7 +65,7 @@ const Form: React.FC = () => {
               name="user_name"
               type="text"
               placeholder="Enter your Name"
-              className="w-full rounded border-[1px] border-slate-300 px-2.5 py-1.5 focus:outline-indigo-600"
+              className="w-full rounded border-[1px] border-slate-300 px-2.5 py-1.5 focus:outline-[#764095]"
               required
             />
           </motion.div>
@@ -79,7 +79,7 @@ const Form: React.FC = () => {
               name="user_email"
               type="email"
               placeholder="Enter your email"
-              className="w-full rounded border-[1px] border-slate-300 px-2.5 py-1.5 focus:outline-indigo-600"
+              className="w-full rounded border-[1px] border-slate-300 px-2.5 py-1.5 focus:outline-[#764095]"
               required
             />
           </motion.div>
@@ -92,7 +92,7 @@ const Form: React.FC = () => {
               id="Mobile-number-input"
               type="number"
               placeholder="Enter mobile number"
-              className="w-full rounded border-[1px] border-slate-300 px-2.5 py-1.5 focus:outline-indigo-600"
+              className="w-full rounded border-[1px] border-slate-300 px-2.5 py-1.5 focus:outline-[#764095]"
               required
             />
 
@@ -104,7 +104,7 @@ const Form: React.FC = () => {
               name="message"
               type="text"
               placeholder="Enter Your Message"
-              className="w-full rounded border-[1px] border-slate-300 px-2.5 py-1.5 focus:outline-indigo-600 h-40 placeholder:text-ellipsis"
+              className="w-full rounded border-[1px] border-slate-300 px-2.5 py-1.5 focus:outline-[#764095] h-40 placeholder:text-ellipsis"
               required
             />
           </motion.div>
@@ -113,22 +113,13 @@ const Form: React.FC = () => {
             variants={primaryVariants}
             className="mb-4 flex w-full items-start gap-1.5"
           >
-            <input
-              type="checkbox"
-              id="terms-checkbox"
-              className="h-4 w-4 accent-indigo-600"
-              required
-            />
-            <label className="text-xs">
-              I agree to the terms and conditions, privacy policy, and cookie
-              policy
-            </label>
+      
           </motion.div>
 
           <input
             value="Send"
             type="submit"
-            className="mb-1.5 w-full rounded bg-indigo-600 px-4 py-2 text-center font-medium text-white transition-colors hover:bg-indigo-700"
+            className="mb-1.5 w-full rounded bg-[#764095] px-4 py-2 text-center font-medium text-white transition-colors hover:bg-indigo-700"
           />
         </form>
       </div>
@@ -158,21 +149,8 @@ const SupplementalContent = () => {
         viewport={{ once: true }}
         className="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-t from-slate-950/90 to-slate-950/0 p-8"
       >
-        <motion.h2
-          className="mb-2 text-3xl font-semibold leading-[1.25] text-white lg:text-4xl"
-          variants={primaryVariants}
-        >
-          Connecting Designers
-          <br />
-          with Opportunities
-        </motion.h2>
-        <motion.p
-          variants={primaryVariants}
-          className="mb-6 max-w-md text-sm text-slate-300"
-        >
-          Bloop is the home of makers, making amazing things, and getting paid.
-          Find your dream job with us.
-        </motion.p>
+   
+
         <div className="flex items-center gap-4">
           <div className="flex items-center">
             <motion.img
@@ -219,7 +197,7 @@ const SupplementalContent = () => {
               variants={primaryVariants}
               className="text-xs text-slate-300"
             >
-              from over 100,000 reviews
+              from over 10000 reviews
             </motion.p>
           </div>
         </div>

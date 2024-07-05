@@ -4,25 +4,24 @@ import i18n from "i18next";
 
 const LanguagesBtn: FC = () => {
   return (
-    <div className="w-10 h-10 bg-black flex items-center justify-center">
+    <div className=" flex items-center  ">
       <button
-        className="m-5"
+        className=" bg-[#764095] text-white  w-10  rounded-lg "
         onClick={() => {
           i18n.changeLanguage("ar");
+          window.location.reload();
         }}
-      >
-        {" "}
-        AR{" "}
+      >  ar
       </button>
       
       <button
-        className="m-5"
+        className="bg-[#764095] text-white w-10 m-2 rounded-lg "
         onClick={() => {
           i18n.changeLanguage("en");
+          window.location.reload();
+
         }}
-      >
-        {" "}
-        EN{" "}
+      > en
       </button>
     </div>
   );

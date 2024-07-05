@@ -1,4 +1,4 @@
-import  { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 
 const imgs = [
@@ -19,7 +19,7 @@ const SPRING_OPTIONS = {
   damping: 50,
 };
 
- const SwipeCarousel = () => {
+const SwipeCarousel = () => {
   const [imgIndex, setImgIndex] = useState(0);
 
   const dragX = useMotionValue(0);
@@ -72,7 +72,6 @@ const SPRING_OPTIONS = {
         <Images imgIndex={imgIndex} />
       </motion.div>
 
-      <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} />
       <GradientEdges />
     </div>
   );
@@ -103,31 +102,6 @@ const Images = ({ imgIndex }: { imgIndex: number }) => {
     </>
   );
 };
-
-const Dots = ({
-  imgIndex,
-  setImgIndex,
-}: {
-  imgIndex: number;
-  setImgIndex: Dispatch<SetStateAction<number>>;
-}) => {
-  return (
-    <div className="flex w-full justify-center gap-2">
-      {imgs.map((_, idx) => {
-        return (
-          <button
-            key={idx}
-            onClick={() => setImgIndex(idx)}
-            className={`h-3 w-3 rounded-full transition-colors ${
-              idx === imgIndex ? "bg-neutral-50" : "bg-neutral-500"
-            }`}
-          />
-        );
-      })}
-    </div>
-  );
-};
-
 const GradientEdges = () => {
   return (
     <>

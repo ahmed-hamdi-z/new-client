@@ -1,11 +1,16 @@
-// Dependencies
 import React, { FC, useState, useEffect, useCallback, useMemo } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import imagesData from './images.json';
+import HeadingSeparator from "../heading";
+
+interface ImageData {
+  img: string;
+  i: number;
+}
 
 const Gallery: FC = () => {
-  const [data, setData] = useState<{ img: string, i: number }>({ img: "", i: 0 });
+  const [data, setData] = useState<ImageData>({ img: "", i: 0 });
   const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {
@@ -40,6 +45,7 @@ const Gallery: FC = () => {
         alt={`Gallery item ${i}`}
         onClick={() => viewImage(image, i)}
         loading="lazy"
+        onError={(e) => (e.currentTarget.src = '/images/placeholder.webp')}
       />
     ))
   ), [images, viewImage]);
@@ -47,15 +53,41 @@ const Gallery: FC = () => {
   return (
     <>
       {data.img && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50">
-          <button onClick={() => imgAction('close')} className="absolute top-10 right-10 text-white text-3xl">X</button>
-          <button onClick={() => imgAction('prev-img')} className="absolute left-10 text-white text-3xl"><FaArrowLeft /></button>
-          <img src={data.img} className="w-auto max-w-[90%] max-h-[90%]" />
-          <button onClick={() => imgAction('next-img')} className="absolute right-10 text-white text-3xl"><FaArrowRight /></button>
+        <div
+          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50"
+          role="dialog"
+          aria-labelledby="image-viewer"
+        >
+          <button
+            onClick={() => imgAction('close')}
+            className="absolute top-10 right-10 text-white text-3xl"
+            aria-label="Close"
+          >
+            X
+          </button>
+          <button
+            onClick={() => imgAction('prev-img')}
+            className="absolute left-10 text-white text-3xl"
+            aria-label="Previous Image"
+          >
+            <FaArrowLeft />
+          </button>
+          <img
+            src={data.img}
+            className="w-auto max-w-[90%] max-h-[90%]"
+            alt="Enlarged view"
+          />
+          <button
+            onClick={() => imgAction('next-img')}
+            className="absolute right-10 text-white text-3xl"
+            aria-label="Next Image"
+          >
+            <FaArrowRight />
+          </button>
         </div>
       )}
       <div className="p-3">
-        <h1 className="text-5xl mb-5 text-center">Our Gallery</h1>
+        <HeadingSeparator title="Our Gallery" />
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3, 1200: 4 }}>
           <Masonry gutter="5px">
             {galleryItems}

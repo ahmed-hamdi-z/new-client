@@ -27,7 +27,6 @@ const FollowUS = lazy(() => import("@/components/follow"));
 const ContactComp = lazy(() => import("@/components/contact"));
 
 // Pages
-
 const LayoutStructure: FC = () => {
   const { direction, language } = useSelector(
     (state: RootState) => state.settings

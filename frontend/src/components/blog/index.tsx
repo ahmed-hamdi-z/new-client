@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import useMeasure from "react-use-measure";
+import HeadingSeparator from "../heading";
 
 const CARD_WIDTH = 350;
 const MARGIN = 20;
@@ -42,9 +43,9 @@ const Blog = () => {
   return (
     <section className="bg-neutral-100 py-8" ref={ref}>
       <div className="relative overflow-hidden p-4">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto ">   <HeadingSeparator title="Blog" />
           <div className="flex items-center justify-between ">
-            <h2 className="mx-auto mb-4 text-4xl"> Blog</h2>
+       <span className="m-4"></span>
 
             <div className="flex items-center gap-2">
               <button

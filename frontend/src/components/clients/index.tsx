@@ -1,11 +1,12 @@
 // Dependencies
 import { FC } from "react";
 import { motion } from "framer-motion";
+import HeadingSeparator from "../heading";
 
 const Clients: FC = () => {
   return (
-    <section className="bg-white py-4">
-        <h1 className="text-6xl text-center mb-6"> Our Clients </h1>
+    <section className="bg-white p-3 ">
+        <HeadingSeparator title="Our Clients" />
    
       <div className="flex overflow-hidden mt-4">
         <TranslateWrapper reverse>
@@ -60,8 +61,8 @@ const LogoItem = ({ imgSrc }: { imgSrc: string }) => {
 
 const LogoItemsBottom = () => (
   <>
-    <LogoItem imgSrc="./images/1.png" />
-    <LogoItem imgSrc="./images/2.png" />
+    <LogoItem imgSrc="./images/1.jpg" />
+    {/* <LogoItem imgSrc="./images/2.png" /> */}
     <LogoItem imgSrc="./images/3.png" />
     <LogoItem imgSrc="./images/4.png" />
     <LogoItem imgSrc="./images/5.png" />

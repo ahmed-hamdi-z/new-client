@@ -1,4 +1,9 @@
 import React from 'react';
+import { useTranslation } from "react-i18next";
+import { MdOutlineDesignServices } from "react-icons/md";
+import { BsBuildingsFill } from "react-icons/bs";
+import { SiAltiumdesigner } from "react-icons/si";
+import { TbHomeInfinity } from "react-icons/tb";
 
 interface CardProps {
   title: string;
@@ -7,15 +12,18 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ title, items, icon }) => {
+  const { t } = useTranslation();
+
   return (
-    <div className="bg-gray-900 text-white w-auto h-auto p-6 rounded-md ">
-      <div className="flex items-center  mb-4">
-        <div className="text-2xl mr-2">{icon}</div>
-        <h2 className="text-xl font-bold">{title}</h2>
+    <div className="bg-[#764095] text-white w-auto h-auto p-6 rounded-md rtl:text-end">
+          <div className="text-4xl mx-28 mb-[-30px] ">{icon}</div>
+      <div className="flex items-center mb-4">
+    
+        <h2 className="text-xl font-bold w-full text-center">{t(title)}</h2>
       </div>
-      <ul className="list-outside list-disc pl-3 ">
+      <ul className=" pl-3 ">
         {items.map((item, index) => (
-          <li key={index} className="text-gray-400">{item}</li>
+          <li key={index} className= " text-white leading-relaxed text-justify rtl:text-end  ">{t(item)}</li>
         ))}
       </ul>
     </div>
@@ -26,48 +34,34 @@ const AppCards: React.FC = () => {
   const cards: CardProps[] = [
     {
       title: 'Design services',
-      icon: '🛠️', // Replace with an appropriate icon
+      icon: <MdOutlineDesignServices />,
       items: [
         'Interior design',
-        'Interface design',
-        'Design of residential villas',
-        'Administrative office design',
-        'Shop design',
-        'Design of restaurants and cafes',
-        'Design of outdoor sessions and gardens',
       ],
     },
     {
-      title: 'Furnishing services',
-      icon: '🛋️', // Replace with an appropriate icon
+      title: 'Construction',
+      icon: <BsBuildingsFill />,
       items: [
-        'Design and distribution of furniture for apartments and residential villas',
-        'Design and distribution of office furniture',
-        'Lighting design and distribution',
-        'Establishment and design of smart home systems',
-        'Establishing and designing security systems',
+        'Construction disc'
       ],
     },
     {
-      title: 'Restoration ',
-      icon: '🏠', // Replace with an appropriate icon
+      title: 'Finishes',
+      icon: <TbHomeInfinity />, 
       items: [
-        'Restoration and development of residential villas',
-        'Restoration and development of residential buildings',
-        'Real estate value raising studies',
-        'Studies to raise the investment return for commercial buildings',
+        'Finishes disc',
       ],
     },
     {
-      title: 'zahw Lab',
-      icon: '🧪', // Replace with an appropriate icon
+      title: 'Interior decorations',
+      icon: <SiAltiumdesigner />, 
       items: [
-        'Virtual reality and augmented reality services',
-        '3D printing services',
-        'Development services and raising the efficiency of implementation teams',
-        'Unique decorative element design services',
+        'Interior decorations disc'
+      
       ],
     },
+    
   ];
 
   return (

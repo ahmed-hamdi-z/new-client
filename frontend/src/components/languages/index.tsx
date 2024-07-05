@@ -8,7 +8,6 @@ i18n
   .use(LanguageDetector)
   .use(HttpApi)
   .init({
-    lng: "en",
     fallbackLng: "en",
     detection: {
       order: [

@@ -2,7 +2,6 @@
 import { FC, useEffect, useRef } from "react";
 import { animate, useInView } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import LanguagesBtn from "@/components/languages/button";
 
 
 const CountUpStats: FC = () => {
@@ -12,32 +11,30 @@ const CountUpStats: FC = () => {
     <div className="flex flex-col items-center justify-between pt-20 ">
       <div className="">
 
-        <button className=" mb-16  w-60 h-12 border-2 border-black  font-semibold text-black transition-colors hover:bg-slate-700 hover:text-black">
+        <button className=" mb-16  w-60 h-12 border-2 border-[#764095]  font-semibold text-black transition-colors hover:bg-[#764095] hover:text-black">
           <p>{t("Talk to us ")} </p>
         </button>
-        <div className=""> <LanguagesBtn /> </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:gap-24 md:gap-16 gap-12">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:gap-24 md:gap-16 gap-12 text-[#764095]">
         <div className=" ">
           {" "}
-          <Stat num={9} suffix="" subheading="Years Of Experience" />
+          <Stat num={9} suffix="" subheading={t("Years Of Experience")} />
         </div>
         <div className=" ">
           <Stat
             num={125}
             decimals={0}
             suffix=""
-            subheading="Satisfied Customers "
+            subheading={t("Satisfied Customers")}
           />
         </div>
         <div className=" ">
-          <Stat num={150} suffix="" subheading="Completed Projects" />
+          <Stat num={150} suffix="" subheading={t("Completed Projects")} />
         </div>
         <div className=" ">
           {" "}
-          <Stat num={88} suffix="" subheading="Ready Equipment
- " />
+          <Stat num={88} suffix="" subheading={t("Ready Equipment")} />
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { FC, Dispatch, SetStateAction, useState } from "react";
 import { FiMenu, FiArrowRight, FiX, FiChevronDown } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
+import LanguagesBtn from "@/components/languages/button";
 
 import {
   useMotionValueEvent,
@@ -33,12 +34,14 @@ const FlyoutNav = () => {
       ${
         scrolled
           ? "bg-[#D4D4D4] py-3 shadow-xl text-[#764095]"
-          : "bg-neutral-950/0 py-6 shadow-none bg-[#D4D4D4] bg-opacity-30 text-[#000]"
+          : " py-6 shadow-none bg-[#D4D4D4]  text-[#764095]"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         <Logo />
         <div className="hidden gap-32 lg:flex">
+        <div className=""> <LanguagesBtn /> </div>
+
           <Links />
           <CTAs />
         </div>
@@ -49,11 +52,10 @@ const FlyoutNav = () => {
 };
 
 const Logo = ({ color = "white" }: { color?: string }) => {
-  // Temp logo from https://logoipsum.com/
   return (
     <div className="flex items-center gap-2">
-      <span className="text-2xl font-bold" style={{ color }}>
-      zahw
+      <span className="text-2xl font-bold w-16 h-16" style={{ color }}>
+        <img src="/images/logo.png" />
       </span>
     </div>
   );
@@ -64,10 +66,11 @@ const Links = () => {
 
   return (
     <div className="flex items-center gap-3 ">
-      <NavLink href="">{t("Home")}</NavLink>
-      <NavLink href="">{t("Services")}</NavLink>
-      <NavLink href="">{t("Contact")}</NavLink>
+      <NavLink href="/">{t("Home")}</NavLink>
       <NavLink href="">{t("About")}</NavLink>
+      <NavLink href="">{t("Portflio")}</NavLink>
+      <NavLink href="/blog">{t("Blog")}</NavLink>
+      <NavLink href="/contact">{t("Contact")}</NavLink>
     </div>
   );
 };
@@ -104,13 +107,14 @@ const NavLink = ({
 };
 
 const CTAs = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex items-center gap-3">
-      <button className="flex items-center gap-2  border-2 border-white px-4 py-2 font-semibold text-white transition-colors hover:bg-white hover:text-black">
-        <span>Get Consultation</span>
+      <button className="flex items-center gap-2  border-2 border-[#764095] px-4 py-2 font-semibold text-[#764095] transition-colors hover:bg-white hover:text-black">
+        <span>{t("Consultation")}</span>
       </button>
-      <button className=" border-2 border-indigo-300 bg-indigo-300 px-4 py-2 font-semibold text-black transition-colors hover:border-indigo-600 hover:bg-indigo-600 hover:text-white">
-        Contact us
+      <button className=" border-2 border-indigo-300 bg-indigo-300 px-4 py-2 font-semibold text-black transition-colors hover:border-[#764095] hover:bg-[#764095] hover:text-white">
+      {t("Contact")}
       </button>
     </div>
   );

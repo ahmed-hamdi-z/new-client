@@ -5,5 +5,7 @@ export const CONFIG = {
   root_path: "/",
   contact_path: "/contact",
   blog_path: "/blog",
-  blog_details: "/details/:id"
+  ad_path: "/ad",
+  blog_details: "/details/:id",
+  portfolio_path: "/portfolio"
 } as const;
